@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.11.9 on win32)" generated="2025-04-23T10:17:51.419292" rpa="false" schemaversion="5">
+<suite id="s1" name="Advanced Search" source="D:\WorkSpace\anfo work\reltio rf\tests\advanced_search\advanced_search.robot">
+<test id="s1-t1" name="Valid Login Test" line="6">
+<kw name="Login To System" owner="login_resources">
+<kw name="Open Login Page" owner="login_resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:17:52.062809" level="INFO">Opening browser 'Chrome' to base url 'https://gus-training.reltio.com/nui/trainMDM0KrWMcC/search'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-23T10:17:52.061808" elapsed="12.943782"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-23T10:18:05.006584" elapsed="0.058004"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-04-23T10:18:05.065589" elapsed="3.486732"/>
+</kw>
+<doc>Opens the login page and waits for it to load</doc>
+<status status="PASS" start="2025-04-23T10:17:52.058801" elapsed="16.494538"/>
+</kw>
+<kw name="Input Username" owner="login_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-23T10:18:08.553339" elapsed="0.125997"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:18:08.680322" elapsed="0.069998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:18:08.751353" level="INFO">Typing text 'training.user' into text field 'xpath=//input[@name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:18:08.750320" elapsed="0.175020"/>
+</kw>
+<arg>${username}</arg>
+<doc>Enters username in the username field</doc>
+<status status="PASS" start="2025-04-23T10:18:08.553339" elapsed="0.372001"/>
+</kw>
+<kw name="Input Password" owner="login_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-23T10:18:08.926322" elapsed="0.034999"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:18:08.961321" elapsed="0.045006"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:18:09.008324" level="INFO">Typing text 'Reltio_Learn_06/10/2024' into text field 'xpath=//input[@name='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:18:09.007322" elapsed="0.169006"/>
+</kw>
+<arg>${password}</arg>
+<doc>Enters password in the password field</doc>
+<status status="PASS" start="2025-04-23T10:18:08.926322" elapsed="0.251024"/>
+</kw>
+<kw name="Submit Login" owner="login_resources">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-04-23T10:18:09.177346" elapsed="0.042977"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:18:09.221347" level="INFO">Clicking button 'xpath=//button[contains(text(),'Sign in')]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:18:09.220323" elapsed="0.145998"/>
+</kw>
+<doc>Clicks the login button and waits for the page to load</doc>
+<status status="PASS" start="2025-04-23T10:18:09.177346" elapsed="0.188975"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Complete login flow with default or custom credentials</doc>
+<status status="PASS" start="2025-04-23T10:17:52.057809" elapsed="17.308512"/>
+</kw>
+<kw name="Verify Login Success" owner="login_resources">
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${LOGIN_ERROR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2025-04-23T10:18:09.367324" elapsed="0.018028"/>
+</kw>
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:18:09.402324" level="INFO">Current page does not contain element 'xpath=//p[contains(@class,'Form_error')]'.</msg>
+<arg>${LOGIN_ERROR}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2025-04-23T10:18:09.385352" elapsed="0.016972"/>
+</kw>
+<doc>Verifies that login was successful</doc>
+<status status="PASS" start="2025-04-23T10:18:09.366321" elapsed="0.036003"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-23T10:18:09.403324" elapsed="2.495178"/>
+</kw>
+<doc>Tests login with valid credentials</doc>
+<status status="PASS" start="2025-04-23T10:17:52.054809" elapsed="19.844690"/>
+</test>
+<doc>Test cases for login functionality</doc>
+<status status="PASS" start="2025-04-23T10:17:51.421286" elapsed="20.481211"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Advanced Search" id="s1" pass="1" fail="0" skip="0">Advanced Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

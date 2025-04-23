@@ -1,0 +1,8 @@
+{
+    "robot.pythonpath": [
+        "${workspaceFolder}",
+        "${env:PYTHONPATH}",
+        "C:\\Users\\vua\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages"
+    ],
+    "robot.language-server.python": "python"
+} 
