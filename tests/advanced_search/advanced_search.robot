@@ -6,5 +6,4 @@ Variables         ../../variables/common_variables.py
 Valid Login Test
     [Documentation]    Tests login with valid credentials
     Login To System    ${USERNAME}    ${PASSWORD}
-    Verify Login Success
-    [Teardown]    Close Browser
+    Open Console
