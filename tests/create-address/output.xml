@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.11.9 on win32)" generated="2025-05-05T10:24:04.000009" rpa="false" schemaversion="5">
+<suite id="s1" name="Advanced Search" source="D:\WorkSpace\anfo work\reltio rf\tests\create-address\advanced_search.robot">
+<test id="s1-t1" name="Valid Login Test" line="6">
+<kw name="Login To System" owner="login_resources">
+<kw name="Open Login Page" owner="login_resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:04.611010" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/ebx-authentication/login?resume=/ebx/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-05T10:24:04.610026" elapsed="2.945984"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-05T10:24:07.556010" elapsed="0.066500"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-05T10:24:07.622510" elapsed="0.199805"/>
+</kw>
+<doc>Opens the login page and waits for it to load</doc>
+<status status="PASS" start="2025-05-05T10:24:04.608008" elapsed="3.216315"/>
+</kw>
+<kw name="Input Username" owner="login_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T10:24:07.829308" elapsed="0.048536"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:07.877844" elapsed="0.078997"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:07.957843" level="INFO">Typing text 'admin' into text field 'xpath=//input[@id='login']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:07.957843" elapsed="0.110580"/>
+</kw>
+<arg>${username}</arg>
+<doc>Enters username in the username field</doc>
+<status status="PASS" start="2025-05-05T10:24:07.827312" elapsed="0.241111"/>
+</kw>
+<kw name="Input Password" owner="login_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T10:24:08.068423" elapsed="0.031003"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:08.100424" elapsed="0.062002"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:08.165435" level="INFO">Typing text 'admin' into text field 'xpath=//input[@id='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:08.163430" elapsed="0.109997"/>
+</kw>
+<arg>${password}</arg>
+<doc>Enters password in the password field</doc>
+<status status="PASS" start="2025-05-05T10:24:08.068423" elapsed="0.205004"/>
+</kw>
+<kw name="Submit Login" owner="login_resources">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T10:24:08.274456" elapsed="0.043967"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:08.318423" level="INFO">Clicking button 'xpath=//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:08.318423" elapsed="0.120003"/>
+</kw>
+<doc>Clicks the login button and waits for the page to load</doc>
+<status status="PASS" start="2025-05-05T10:24:08.273427" elapsed="0.164999"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Complete login flow with default or custom credentials</doc>
+<status status="PASS" start="2025-05-05T10:24:04.608008" elapsed="3.830418"/>
+</kw>
+<kw name="Add New Address With Fields" owner="advanced_search_resources">
+<kw name="Click Address Button" owner="advanced_search_resources">
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T10:24:08.440424" elapsed="0.707954"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T10:24:09.148378" elapsed="0.148536"/>
+</kw>
+<arg>${ADDRESS_BUTTON}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T10:24:08.439427" elapsed="0.858490"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:09.299912" level="INFO">Clicking element 'xpath=//span[normalize-space()='Address']'.</msg>
+<arg>${ADDRESS_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:09.298915" elapsed="0.186546"/>
+</kw>
+<doc>Click on the Advanced Search Button</doc>
+<status status="PASS" start="2025-05-05T10:24:08.439427" elapsed="1.047038"/>
+</kw>
+<kw name="Go to Frame" owner="advanced_search_resources">
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:09.488461" level="INFO">Selecting frame 'xpath=//iframe[@id='ebx-legacy-component']'.</msg>
+<arg>${FRAME}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2025-05-05T10:24:09.487466" elapsed="0.134002"/>
+</kw>
+<doc>Go to the Frame</doc>
+<status status="PASS" start="2025-05-05T10:24:09.486465" elapsed="0.135003"/>
+</kw>
+<kw name="Click Add Button" owner="advanced_search_resources">
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T10:24:09.622479" elapsed="0.371905"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T10:24:09.994384" elapsed="0.037005"/>
+</kw>
+<arg>${ADD_BUTTON}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T10:24:09.622479" elapsed="0.408910"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:10.032419" level="INFO">Clicking element 'xpath=//button[@aria-label='Create a record']'.</msg>
+<arg>${ADD_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.031389" elapsed="0.213999"/>
+</kw>
+<doc>Click on the Add Button</doc>
+<status status="PASS" start="2025-05-05T10:24:09.622479" elapsed="0.622909"/>
+</kw>
+<kw name="Fill Dynamic Field" owner="advanced_search_resources">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-05T10:24:10.247390" level="INFO">${field_xpath} = xpath=//label[text()='Id']/ancestor::tr//td[contains(@class,'ebx_Input')]//input</msg>
+<var>${field_xpath}</var>
+<arg>"${ADD_ADDRESS_XPATH}" % "${field_name}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.246417" elapsed="0.000973"/>
+</kw>
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.248396" elapsed="0.265068"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.514468" elapsed="0.045985"/>
+</kw>
+<arg>${field_xpath}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T10:24:10.247390" elapsed="0.313063"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:10.561454" level="INFO">Typing text '23' into text field 'xpath=//label[text()='Id']/ancestor::tr//td[contains(@class,'ebx_Input')]//input'.</msg>
+<arg>${field_xpath}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.561454" elapsed="0.116489"/>
+</kw>
+<arg>Id</arg>
+<arg>${id_value}</arg>
+<doc>Fill a field with dynamic field name</doc>
+<status status="PASS" start="2025-05-05T10:24:10.246417" elapsed="0.431526"/>
+</kw>
+<kw name="Fill Dynamic Field" owner="advanced_search_resources">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-05T10:24:10.678980" level="INFO">${field_xpath} = xpath=//label[text()='Name']/ancestor::tr//td[contains(@class,'ebx_Input')]//input</msg>
+<var>${field_xpath}</var>
+<arg>"${ADD_ADDRESS_XPATH}" % "${field_name}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.678980" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.678980" elapsed="0.028474"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.708452" elapsed="0.043996"/>
+</kw>
+<arg>${field_xpath}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T10:24:10.678980" elapsed="0.074467"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:10.753447" level="INFO">Typing text 'John Doe' into text field 'xpath=//label[text()='Name']/ancestor::tr//td[contains(@class,'ebx_Input')]//input'.</msg>
+<arg>${field_xpath}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.753447" elapsed="0.157006"/>
+</kw>
+<arg>Name</arg>
+<arg>${name_value}</arg>
+<doc>Fill a field with dynamic field name</doc>
+<status status="PASS" start="2025-05-05T10:24:10.677943" elapsed="0.232510"/>
+</kw>
+<kw name="Fill Dynamic Field" owner="advanced_search_resources">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-05T10:24:10.912448" level="INFO">${field_xpath} = xpath=//label[text()='Fax']/ancestor::tr//td[contains(@class,'ebx_Input')]//input</msg>
+<var>${field_xpath}</var>
+<arg>"${ADD_ADDRESS_XPATH}" % "${field_name}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.911455" elapsed="0.000993"/>
+</kw>
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.913449" elapsed="0.032468"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.946944" elapsed="0.036028"/>
+</kw>
+<arg>${field_xpath}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T10:24:10.912448" elapsed="0.070524"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:10.983944" level="INFO">Typing text '0123456' into text field 'xpath=//label[text()='Fax']/ancestor::tr//td[contains(@class,'ebx_Input')]//input'.</msg>
+<arg>${field_xpath}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:10.982972" elapsed="0.118948"/>
+</kw>
+<arg>Fax</arg>
+<arg>${fax_value}</arg>
+<doc>Fill a field with dynamic field name</doc>
+<status status="PASS" start="2025-05-05T10:24:10.911455" elapsed="0.190465"/>
+</kw>
+<kw name="Fill Dynamic Field" owner="advanced_search_resources">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-05T10:24:11.102940" level="INFO">${field_xpath} = xpath=//label[text()='Phone Number']/ancestor::tr//td[contains(@class,'ebx_Input')]//input</msg>
+<var>${field_xpath}</var>
+<arg>"${ADD_ADDRESS_XPATH}" % "${field_name}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-05T10:24:11.102940" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T10:24:11.103948" elapsed="0.024973"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T10:24:11.129919" elapsed="0.034034"/>
+</kw>
+<arg>${field_xpath}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T10:24:11.102940" elapsed="0.061013"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:11.163953" level="INFO">Typing text '123-456-789' into text field 'xpath=//label[text()='Phone Number']/ancestor::tr//td[contains(@class,'ebx_Input')]//input'.</msg>
+<arg>${field_xpath}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:11.163953" elapsed="0.124968"/>
+</kw>
+<arg>Phone Number</arg>
+<arg>${phone_value}</arg>
+<doc>Fill a field with dynamic field name</doc>
+<status status="PASS" start="2025-05-05T10:24:11.101920" elapsed="0.187001"/>
+</kw>
+<kw name="Press Save Button" owner="advanced_search_resources">
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T10:24:11.289919" elapsed="0.028999"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T10:24:11.318918" elapsed="0.033034"/>
+</kw>
+<arg>${SAVE_AND_CLOSE_BUTTON}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T10:24:11.289919" elapsed="0.062033"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-05T10:24:11.351952" level="INFO">Clicking element 'xpath=//button[text()='Save and close']'.</msg>
+<arg>${SAVE_AND_CLOSE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T10:24:11.351952" elapsed="0.191967"/>
+</kw>
+<doc>Press Save button</doc>
+<status status="PASS" start="2025-05-05T10:24:11.288921" elapsed="0.254998"/>
+</kw>
+<arg>23</arg>
+<arg>John Doe</arg>
+<arg>0123456</arg>
+<arg>123-456-789</arg>
+<doc>Add new address with ID, Name and Fax fields</doc>
+<status status="PASS" start="2025-05-05T10:24:08.439427" elapsed="3.104492"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-05T10:24:12.545279" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-05T10:24:11.544924" elapsed="1.000355"/>
+</kw>
+<doc>Tests login with valid credentials</doc>
+<status status="PASS" start="2025-05-05T10:24:04.607012" elapsed="7.939267"/>
+</test>
+<doc>Test cases for login functionality</doc>
+<status status="PASS" start="2025-05-05T10:24:04.002009" elapsed="8.548287"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Advanced Search" id="s1" pass="1" fail="0" skip="0">Advanced Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

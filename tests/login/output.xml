@@ -1,120 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.11.9 on win32)" generated="2025-04-22T17:31:16.502499" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.11.9 on win32)" generated="2025-04-28T17:05:34.767052" rpa="false" schemaversion="5">
 <suite id="s1" name="Login" source="D:\WorkSpace\anfo work\reltio rf\tests\login\login.robot">
-<test id="s1-t1" name="Invalid Username Test" line="13">
+<test id="s1-t1" name="Valid Login Test" line="7">
 <kw name="Login To System" owner="login_resources">
 <kw name="Open Login Page" owner="login_resources">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-22T17:31:16.943499" level="INFO">Opening browser 'Chrome' to base url 'https://gus-training.reltio.com/nui/trainMDM0KrWMcC/search'.</msg>
+<msg time="2025-04-28T17:05:35.350429" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/ebx-authentication/login?resume=/ebx/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-22T17:31:16.942501" elapsed="5.453745"/>
+<status status="PASS" start="2025-04-28T17:05:35.349428" elapsed="2.570670"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-04-22T17:31:22.397248" elapsed="0.043939"/>
+<status status="PASS" start="2025-04-28T17:05:37.920098" elapsed="0.066011"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${USERNAME_FIELD}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-04-22T17:31:22.442186" elapsed="3.506837"/>
+<status status="PASS" start="2025-04-28T17:05:37.988112" elapsed="0.325104"/>
 </kw>
 <doc>Opens the login page and waits for it to load</doc>
-<status status="PASS" start="2025-04-22T17:31:16.941501" elapsed="9.007522"/>
+<status status="PASS" start="2025-04-28T17:05:35.348428" elapsed="2.964788"/>
 </kw>
 <kw name="Input Username" owner="login_resources">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${USERNAME_FIELD}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-22T17:31:25.949988" elapsed="0.032004"/>
+<status status="PASS" start="2025-04-28T17:05:38.314215" elapsed="0.031001"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${USERNAME_FIELD}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-22T17:31:25.983022" elapsed="0.068167"/>
+<status status="PASS" start="2025-04-28T17:05:38.345216" elapsed="0.062002"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-22T17:31:26.051988" level="INFO">Typing text 'invalid_user' into text field 'xpath=//input[@name='username']'.</msg>
+<msg time="2025-04-28T17:05:38.407218" level="INFO">Typing text 'admin' into text field 'xpath=//input[@id='login']'.</msg>
 <arg>${USERNAME_FIELD}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-22T17:31:26.051988" elapsed="0.224999"/>
+<status status="PASS" start="2025-04-28T17:05:38.407218" elapsed="0.118000"/>
 </kw>
 <arg>${username}</arg>
 <doc>Enters username in the username field</doc>
-<status status="PASS" start="2025-04-22T17:31:25.949023" elapsed="0.327964"/>
+<status status="PASS" start="2025-04-28T17:05:38.314215" elapsed="0.211003"/>
 </kw>
 <kw name="Input Password" owner="login_resources">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PASSWORD_FIELD}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-22T17:31:26.278985" elapsed="0.050002"/>
+<status status="PASS" start="2025-04-28T17:05:38.526217" elapsed="0.030998"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${PASSWORD_FIELD}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-22T17:31:26.329989" elapsed="0.061003"/>
+<status status="PASS" start="2025-04-28T17:05:38.558215" elapsed="0.058000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-22T17:31:26.392014" level="INFO">Typing text 'Reltio_Learn_06/10/2024' into text field 'xpath=//input[@name='password']'.</msg>
+<msg time="2025-04-28T17:05:38.616215" level="INFO">Typing text 'admin' into text field 'xpath=//input[@id='password']'.</msg>
 <arg>${PASSWORD_FIELD}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-22T17:31:26.390992" elapsed="0.164001"/>
+<status status="PASS" start="2025-04-28T17:05:38.616215" elapsed="0.121994"/>
 </kw>
 <arg>${password}</arg>
 <doc>Enters password in the password field</doc>
-<status status="PASS" start="2025-04-22T17:31:26.277995" elapsed="0.276998"/>
+<status status="PASS" start="2025-04-28T17:05:38.525218" elapsed="0.212991"/>
 </kw>
 <kw name="Submit Login" owner="login_resources">
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-04-22T17:31:26.556013" elapsed="0.040976"/>
+<status status="PASS" start="2025-04-28T17:05:38.738209" elapsed="0.044281"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-04-22T17:31:26.596989" level="INFO">Clicking button 'xpath=//button[contains(text(),'Sign in')]'.</msg>
+<msg time="2025-04-28T17:05:38.782490" level="INFO">Clicking button 'xpath=//button[normalize-space()='Log in']'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-22T17:31:26.596989" elapsed="0.146000"/>
+<status status="PASS" start="2025-04-28T17:05:38.782490" elapsed="0.217001"/>
 </kw>
 <doc>Clicks the login button and waits for the page to load</doc>
-<status status="PASS" start="2025-04-22T17:31:26.554993" elapsed="0.187996"/>
+<status status="PASS" start="2025-04-28T17:05:38.738209" elapsed="0.261282"/>
 </kw>
-<arg>invalid_user</arg>
+<arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Complete login flow with default or custom credentials</doc>
-<status status="PASS" start="2025-04-22T17:31:16.941501" elapsed="9.801488"/>
+<status status="PASS" start="2025-04-28T17:05:35.348428" elapsed="3.651063"/>
 </kw>
-<kw name="Verify Login Failed" owner="login_resources">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<kw name="Verify Login Success" owner="login_resources">
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
 <arg>${LOGIN_ERROR}</arg>
 <arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-22T17:31:26.743988" elapsed="0.452635"/>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2025-04-28T17:05:39.001495" elapsed="0.191962"/>
 </kw>
-<kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-04-22T17:31:27.224803" level="INFO">Element 'xpath=//p[contains(@class,'Form_error')]' contains text 'Invalid Username or Password'.</msg>
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2025-04-28T17:05:39.209461" level="INFO">Current page does not contain element 'xpath=//p[contains(@class,'Form_error')]'.</msg>
 <arg>${LOGIN_ERROR}</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-04-22T17:31:27.196623" elapsed="0.028180"/>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2025-04-28T17:05:39.194454" elapsed="0.015007"/>
 </kw>
-<arg>Invalid Username or Password</arg>
-<doc>Verifies that login failed with error message</doc>
-<status status="PASS" start="2025-04-22T17:31:26.743988" elapsed="0.481808"/>
+<doc>Verifies that login was successful</doc>
+<status status="PASS" start="2025-04-28T17:05:39.000498" elapsed="0.208963"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-22T17:31:27.225796" elapsed="2.492553"/>
+<status status="PASS" start="2025-04-28T17:05:39.210454" elapsed="2.491639"/>
 </kw>
-<doc>Tests login with invalid username</doc>
-<status status="PASS" start="2025-04-22T17:31:16.939499" elapsed="12.778850"/>
+<doc>Tests login with valid credentials</doc>
+<status status="PASS" start="2025-04-28T17:05:35.346423" elapsed="6.356703"/>
 </test>
 <doc>Test cases for login functionality</doc>
-<status status="PASS" start="2025-04-22T17:31:16.506513" elapsed="13.213700"/>
+<status status="PASS" start="2025-04-28T17:05:34.770050" elapsed="6.938056"/>
 </suite>
 <statistics>
 <total>
@@ -127,7 +125,7 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2025-04-22T17:31:16.931498" level="ERROR">Error in file 'D:\WorkSpace\anfo work\reltio rf\tests\login\login.robot' on line 5: Processing variable file '../../variables/login_variable.robot' failed: Importing variable file '../../variables/login_variable.robot' failed: ModuleNotFoundError: No module named '.'
+<msg time="2025-04-28T17:05:35.339425" level="ERROR">Error in file 'D:\WorkSpace\anfo work\reltio rf\tests\login\login.robot' on line 5: Processing variable file '../../variables/login_variable.robot' failed: Importing variable file '../../variables/login_variable.robot' failed: ModuleNotFoundError: No module named '.'
 Traceback (most recent call last):
   None
 PYTHONPATH:

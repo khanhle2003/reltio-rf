@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.11.9 on win32)" generated="2025-05-05T17:34:52.026704" rpa="false" schemaversion="5">
+<suite id="s1" name="Update Address" source="D:\WorkSpace\anfo work\reltio rf\tests\update_address\update_address.robot">
+<test id="s1-t1" name="Valid Login Test" line="7">
+<kw name="Login To System" owner="login_resources">
+<kw name="Open Login Page" owner="login_resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:52.703177" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/ebx-authentication/login?resume=/ebx/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-05T17:34:52.702179" elapsed="2.896149"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-05T17:34:55.598328" elapsed="0.097006"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-05T17:34:55.698358" elapsed="0.051980"/>
+</kw>
+<doc>Opens the login page and waits for it to load</doc>
+<status status="PASS" start="2025-05-05T17:34:52.701176" elapsed="3.049162"/>
+</kw>
+<kw name="Input Username" owner="login_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T17:34:55.755336" elapsed="0.077993"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:55.834344" elapsed="0.090999"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:55.926326" level="INFO">Typing text 'admin' into text field 'xpath=//input[@id='login']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:55.926326" elapsed="0.101006"/>
+</kw>
+<arg>${username}</arg>
+<doc>Enters username in the username field</doc>
+<status status="PASS" start="2025-05-05T17:34:55.752339" elapsed="0.274993"/>
+</kw>
+<kw name="Input Password" owner="login_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T17:34:56.028326" elapsed="0.036999"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:56.065325" elapsed="0.044003"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:56.109328" level="INFO">Typing text 'admin' into text field 'xpath=//input[@id='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:56.109328" elapsed="0.102724"/>
+</kw>
+<arg>${password}</arg>
+<doc>Enters password in the password field</doc>
+<status status="PASS" start="2025-05-05T17:34:56.027332" elapsed="0.184720"/>
+</kw>
+<kw name="Submit Login" owner="login_resources">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T17:34:56.212052" elapsed="0.040153"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:56.252205" level="INFO">Clicking button 'xpath=//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:56.252205" elapsed="0.103540"/>
+</kw>
+<doc>Clicks the login button and waits for the page to load</doc>
+<status status="PASS" start="2025-05-05T17:34:56.212052" elapsed="0.144681"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Complete login flow with default or custom credentials</doc>
+<status status="PASS" start="2025-05-05T17:34:52.701176" elapsed="3.655557"/>
+</kw>
+<kw name="Update Address" owner="update_address_resources">
+<kw name="Click Address Button" owner="update_address_resources">
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T17:34:56.359748" elapsed="0.670994"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T17:34:57.031742" elapsed="0.194005"/>
+</kw>
+<arg>${ADDRESS_BUTTON}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T17:34:56.359748" elapsed="0.866994"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:57.227740" level="INFO">Clicking element 'xpath=//span[normalize-space()='Address']'.</msg>
+<arg>${ADDRESS_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:57.226742" elapsed="0.182002"/>
+</kw>
+<doc>Click on the Advanced Search Button</doc>
+<status status="PASS" start="2025-05-05T17:34:56.358730" elapsed="1.051013"/>
+</kw>
+<kw name="Go to Frame" owner="update_address_resources">
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:57.411742" level="INFO">Selecting frame 'xpath=//iframe[@id='ebx-legacy-component']'.</msg>
+<arg>${FRAME}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2025-05-05T17:34:57.410740" elapsed="0.147000"/>
+</kw>
+<doc>Go to the Frame</doc>
+<status status="PASS" start="2025-05-05T17:34:57.409743" elapsed="0.147997"/>
+</kw>
+<kw name="Click Advanced Filter" owner="update_address_resources">
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T17:34:57.560738" elapsed="0.191002"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T17:34:57.751740" elapsed="0.093999"/>
+</kw>
+<arg>${SHOW_ADV_FILTER}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T17:34:57.559739" elapsed="0.286000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:57.845739" level="INFO">Clicking element 'xpath=//button[@title='Show filters']'.</msg>
+<arg>${SHOW_ADV_FILTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:57.845739" elapsed="0.250000"/>
+</kw>
+<doc>Click on the Add Button</doc>
+<status status="PASS" start="2025-05-05T17:34:57.557740" elapsed="0.539000"/>
+</kw>
+<kw name="Choose Dropdown Criterion" owner="update_address_resources">
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T17:34:58.098738" elapsed="0.030000"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T17:34:58.128738" elapsed="0.039000"/>
+</kw>
+<arg>${SHOW_CRITERION_FILTER}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T17:34:58.097739" elapsed="0.069999"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:58.168736" level="INFO">Clicking element 'xpath=//button[@title='Open drop-down list']'.</msg>
+<arg>${SHOW_CRITERION_FILTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:58.167738" elapsed="0.180013"/>
+</kw>
+<doc>Choose a criterion</doc>
+<status status="PASS" start="2025-05-05T17:34:58.096740" elapsed="0.251011"/>
+</kw>
+<kw name="Choose Criterion" owner="update_address_resources">
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T17:34:58.348738" elapsed="0.280790"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T17:34:58.630527" elapsed="0.030911"/>
+</kw>
+<arg>${ID_FIELD}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T17:34:58.348738" elapsed="0.312700"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:58.661438" level="INFO">Clicking element 'xpath=(//div[@class='ebx_mes_item_ctn'])[1]'.</msg>
+<arg>${ID_FIELD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:58.661438" elapsed="0.165218"/>
+</kw>
+<doc>Choose a criterion</doc>
+<status status="PASS" start="2025-05-05T17:34:58.347751" elapsed="0.479907"/>
+</kw>
+<kw name="Fill Input ID Field" owner="update_address_resources">
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T17:34:58.827658" elapsed="0.249226"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T17:34:59.076884" elapsed="0.034720"/>
+</kw>
+<arg>${INPUT_ID_FIELD}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T17:34:58.827658" elapsed="0.283946"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:59.111604" level="INFO">Typing text '23' into text field 'xpath=//div[contains(@class, 'ebx_AdvancedSearchCriterionLineContent')][.//input[@type='hidden' and contains(@value, '/field/id')]]//input[@class='ebx_APV']'.</msg>
+<arg>${INPUT_ID_FIELD}</arg>
+<arg>23</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:59.111604" elapsed="0.111185"/>
+</kw>
+<doc>Fill the Input ID Field</doc>
+<status status="PASS" start="2025-05-05T17:34:58.827658" elapsed="0.395131"/>
+</kw>
+<kw name="Apply Filter" owner="update_address_resources">
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T17:34:59.223799" elapsed="0.033989"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T17:34:59.258790" elapsed="0.479237"/>
+</kw>
+<arg>${APPLY_BUTTON}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T17:34:59.222789" elapsed="0.515238"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:59.738027" level="INFO">Clicking element 'xpath=//button[@id='ebx_AdvancedSearchPaneApplyButton']'.</msg>
+<arg>${APPLY_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-05T17:34:59.738027" elapsed="0.155998"/>
+</kw>
+<doc>Apply the filter</doc>
+<status status="PASS" start="2025-05-05T17:34:59.222789" elapsed="0.671236"/>
+</kw>
+<kw name="Check Address Need Update" owner="update_address_resources">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-05T17:34:59.895048" level="INFO">${xpath} = xpath=//div[normalize-space()='23']</msg>
+<var>${xpath}</var>
+<arg>"${ADDRESS_NEED_UPDATE}" % "${number}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-05T17:34:59.895048" elapsed="0.000976"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-05T17:34:59.896024" level="INFO">Actual XPath: xpath=//div[normalize-space()='23']</msg>
+<arg>Actual XPath: ${xpath}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-05T17:34:59.896024" elapsed="0.001005"/>
+</kw>
+<kw name="Wait Until Element Is Visible And Enabled" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-05T17:34:59.898025" elapsed="0.028999"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-05T17:34:59.927024" elapsed="0.036002"/>
+</kw>
+<arg>${xpath}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element is both visible and enabled</doc>
+<status status="PASS" start="2025-05-05T17:34:59.897029" elapsed="0.065997"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-05T17:34:59.963026" level="INFO">Clicking element 'xpath=//div[normalize-space()='23']'.</msg>
+<msg time="2025-05-05T17:35:00.347046" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-05T17:35:00.347046" level="FAIL">StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.116); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF60B1BEFA5+77893]
+	GetHandleVerifier [0x00007FF60B1BF000+77984]
+	(No symbol) [0x00007FF60AF891BA]
+	(No symbol) [0x00007FF60AF90AEC]
+	(No symbol) [0x00007FF60AF93B5C]
+	(No symbol) [0x00007FF60AF93C2F]
+	(No symbol) [0x00007FF60AFE6F8B]
+	(No symbol) [0x00007FF60AFE4A62]
+	(No symbol) [0x00007FF60AFE1B01]
+	(No symbol) [0x00007FF60AFE0A01]
+	(No symbol) [0x00007FF60AFD250A]
+	(No symbol) [0x00007FF60B00712A]
+	(No symbol) [0x00007FF60AFD19E6]
+	(No symbol) [0x00007FF60B007340]
+	(No symbol) [0x00007FF60B02F07F]
+	(No symbol) [0x00007FF60B006F03]
+	(No symbol) [0x00007FF60AFD0328]
+	(No symbol) [0x00007FF60AFD1093]
+	GetHandleVerifier [0x00007FF60B477B6D+2931725]
+	GetHandleVerifier [0x00007FF60B472132+2908626]
+	GetHandleVerifier [0x00007FF60B4900F3+3031443]
+	GetHandleVerifier [0x00007FF60B1D91EA+184970]
+	GetHandleVerifier [0x00007FF60B1E086F+215311]
+	GetHandleVerifier [0x00007FF60B1C6EC4+110436]
+	GetHandleVerifier [0x00007FF60B1C7072+110866]
+	GetHandleVerifier [0x00007FF60B1AD479+5401]
+	BaseThreadInitThunk [0x00007FF9D55F7374+20]
+	RtlUserThreadStart [0x00007FF9D751CC91+33]
+</msg>
+<arg>${xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-05-05T17:34:59.963026" elapsed="0.393999">StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.116); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF60B1BEFA5+77893]
+	GetHandleVerifier [0x00007FF60B1BF000+77984]
+	(No symbol) [0x00007FF60AF891BA]
+	(No symbol) [0x00007FF60AF90AEC]
+	(No symbol) [0x00007FF60AF93B5C]
+	(No symbol) [0x00007FF60AF93C2F]
+	(No symbol) [0x00007FF60AFE6F8B]
+	(No symbol) [0x00007FF60AFE4A62]
+	(No symbol) [0x00007FF60AFE1B01]
+	(No symbol) [0x00007FF60AFE0A01]
+	(No symbol) [0x00007FF60AFD250A]
+	(No symbol) [0x00007FF60B00712A]
+	(No symbol) [0x00007FF60AFD19E6]
+	(No symbol) [0x00007FF60B007340]
+	(No symbol) [0x00007FF60B02F07F]
+	(No symbol) [0x00007FF60B006F03]
+	(No symbol) [0x00007FF60AFD0328]
+	(No symbol) [0x00007FF60AFD1093]
+	GetHandleVerifier [0x00007FF60B477B6D+2931725]
+	GetHandleVerifier [0x00007FF60B472132+2908626]
+	GetHandleVerifier [0x00007FF60B4900F3+3031443]
+	GetHandleVerifier [0x00007FF60B1D91EA+184970]
+	GetHandleVerifier [0x00007FF60B1E086F+215311]
+	GetHandleVerifier [0x00007FF60B1C6EC4+110436]
+	GetHandleVerifier [0x00007FF60B1C7072+110866]
+	GetHandleVerifier [0x00007FF60B1AD479+5401]
+	BaseThreadInitThunk [0x00007FF9D55F7374+20]
+	RtlUserThreadStart [0x00007FF9D751CC91+33]
+</status>
+</kw>
+<arg>23</arg>
+<doc>Check if the address need update</doc>
+<status status="FAIL" start="2025-05-05T17:34:59.894025" elapsed="0.463000">StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.116); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF60B1BEFA5+77893]
+	GetHandleVerifier [0x00007FF60B1BF000+77984]
+	(No symbol) [0x00007FF60AF891BA]
+	(No symbol) [0x00007FF60AF90AEC]
+	(No symbol) [0x00007FF60AF93B5C]
+	(No symbol) [0x00007FF60AF93C2F]
+	(No symbol) [0x00007FF60AFE6F8B]
+	(No symbol) [0x00007FF60AFE4A62]
+	(No symbol) [0x00007FF60AFE1B01]
+	(No symbol) [0x00007FF60AFE0A01]
+	(No symbol) [0x00007FF60AFD250A]
+	(No symbol) [0x00007FF60B00712A]
+	(No symbol) [0x00007FF60AFD19E6]
+	(No symbol) [0x00007FF60B007340]
+	(No symbol) [0x00007FF60B02F07F]
+	(No symbol) [0x00007FF60B006F03]
+	(No symbol) [0x00007FF60AFD0328]
+	(No symbol) [0x00007FF60AFD1093]
+	GetHandleVerifier [0x00007FF60B477B6D+2931725]
+	GetHandleVerifier [0x00007FF60B472132+2908626]
+	GetHandleVerifier [0x00007FF60B4900F3+3031443]
+	GetHandleVerifier [0x00007FF60B1D91EA+184970]
+	GetHandleVerifier [0x00007FF60B1E086F+215311]
+	GetHandleVerifier [0x00007FF60B1C6EC4+110436]
+	GetHandleVerifier [0x00007FF60B1C7072+110866]
+	GetHandleVerifier [0x00007FF60B1AD479+5401]
+	BaseThreadInitThunk [0x00007FF9D55F7374+20]
+	RtlUserThreadStart [0x00007FF9D751CC91+33]
+</status>
+</kw>
+<doc>Update address with ID, Name and Fax fields</doc>
+<status status="FAIL" start="2025-05-05T17:34:56.357734" elapsed="4.000327">StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.116); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF60B1BEFA5+77893]
+	GetHandleVerifier [0x00007FF60B1BF000+77984]
+	(No symbol) [0x00007FF60AF891BA]
+	(No symbol) [0x00007FF60AF90AEC]
+	(No symbol) [0x00007FF60AF93B5C]
+	(No symbol) [0x00007FF60AF93C2F]
+	(No symbol) [0x00007FF60AFE6F8B]
+	(No symbol) [0x00007FF60AFE4A62]
+	(No symbol) [0x00007FF60AFE1B01]
+	(No symbol) [0x00007FF60AFE0A01]
+	(No symbol) [0x00007FF60AFD250A]
+	(No symbol) [0x00007FF60B00712A]
+	(No symbol) [0x00007FF60AFD19E6]
+	(No symbol) [0x00007FF60B007340]
+	(No symbol) [0x00007FF60B02F07F]
+	(No symbol) [0x00007FF60B006F03]
+	(No symbol) [0x00007FF60AFD0328]
+	(No symbol) [0x00007FF60AFD1093]
+	GetHandleVerifier [0x00007FF60B477B6D+2931725]
+	GetHandleVerifier [0x00007FF60B472132+2908626]
+	GetHandleVerifier [0x00007FF60B4900F3+3031443]
+	GetHandleVerifier [0x00007FF60B1D91EA+184970]
+	GetHandleVerifier [0x00007FF60B1E086F+215311]
+	GetHandleVerifier [0x00007FF60B1C6EC4+110436]
+	GetHandleVerifier [0x00007FF60B1C7072+110866]
+	GetHandleVerifier [0x00007FF60B1AD479+5401]
+	BaseThreadInitThunk [0x00007FF9D55F7374+20]
+	RtlUserThreadStart [0x00007FF9D751CC91+33]
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-05T17:35:00.358061" elapsed="0.000000"/>
+</kw>
+<doc>Tests login with valid credentials</doc>
+<status status="FAIL" start="2025-05-05T17:34:52.700142" elapsed="7.658882">StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.116); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF60B1BEFA5+77893]
+	GetHandleVerifier [0x00007FF60B1BF000+77984]
+	(No symbol) [0x00007FF60AF891BA]
+	(No symbol) [0x00007FF60AF90AEC]
+	(No symbol) [0x00007FF60AF93B5C]
+	(No symbol) [0x00007FF60AF93C2F]
+	(No symbol) [0x00007FF60AFE6F8B]
+	(No symbol) [0x00007FF60AFE4A62]
+	(No symbol) [0x00007FF60AFE1B01]
+	(No symbol) [0x00007FF60AFE0A01]
+	(No symbol) [0x00007FF60AFD250A]
+	(No symbol) [0x00007FF60B00712A]
+	(No symbol) [0x00007FF60AFD19E6]
+	(No symbol) [0x00007FF60B007340]
+	(No symbol) [0x00007FF60B02F07F]
+	(No symbol) [0x00007FF60B006F03]
+	(No symbol) [0x00007FF60AFD0328]
+	(No symbol) [0x00007FF60AFD1093]
+	GetHandleVerifier [0x00007FF60B477B6D+2931725]
+	GetHandleVerifier [0x00007FF60B472132+2908626]
+	GetHandleVerifier [0x00007FF60B4900F3+3031443]
+	GetHandleVerifier [0x00007FF60B1D91EA+184970]
+	GetHandleVerifier [0x00007FF60B1E086F+215311]
+	GetHandleVerifier [0x00007FF60B1C6EC4+110436]
+	GetHandleVerifier [0x00007FF60B1C7072+110866]
+	GetHandleVerifier [0x00007FF60B1AD479+5401]
+	BaseThreadInitThunk [0x00007FF9D55F7374+20]
+	RtlUserThreadStart [0x00007FF9D751CC91+33]
+</status>
+</test>
+<doc>Test cases for login functionality</doc>
+<status status="FAIL" start="2025-05-05T17:34:52.028698" elapsed="8.341335"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Update Address" id="s1" pass="0" fail="1" skip="0">Update Address</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

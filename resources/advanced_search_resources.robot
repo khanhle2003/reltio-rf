@@ -6,23 +6,48 @@ Resource          ../variables/login_variable.robot
 Resource          ../variables/advanced_search_variables.robot
 Resource          ../resources/login_resources.robot
 Resource          ../resources/common.robot
-*** Keywords ***
-# Advanced search specific keywords below
-# Login To System is already available from login_resources.robot
-Click User Button
-    [Documentation]    Click on the User Button
-    Wait Until Element Is Visible And Enabled    ${USER_BUTTON}    timeout=20s
-    ${status}=    Run Keyword And Return Status    Click Element    ${USER_BUTTON}
-    Run Keyword If    not ${status}    Execute JavaScript    document.querySelector('[data-reltio-id="reltio-user-button"]').click()
-Click Logout Button
-    [Documentation]    Click on the Logout Button
-    Wait Until Element Is Visible And Enabled    ${LOGOUT_BUTTON}    timeout=20s
-    Click Element    ${LOGOUT_BUTTON}
-Open Console
-    [Documentation]    Open the Console
-    Click User Button
-    Click Logout Button
 
+
+*** Keywords ***
+
+Click Address Button
+    [Documentation]    Click on the Advanced Search Button
+    Wait Until Element Is Visible And Enabled    ${ADDRESS_BUTTON}    timeout=20s
+    Click Element    ${ADDRESS_BUTTON}
+
+Go to Frame
+    [Documentation]    Go to the Frame
+    Select Frame    ${FRAME}
+
+Click Add Button
+    [Documentation]    Click on the Add Button
+    Wait Until Element Is Visible And Enabled    ${ADD_BUTTON}    timeout=20s
+    Click Element    ${ADD_BUTTON}
+
+Fill Dynamic Field
+    [Documentation]    Fill a field with dynamic field name
+    [Arguments]    ${field_name}    ${value}
+    ${field_xpath}=    Evaluate    "${ADD_ADDRESS_XPATH}" % "${field_name}"
+    Wait Until Element Is Visible And Enabled    ${field_xpath}    timeout=20s
+    Input Text    ${field_xpath}    ${value}
+    
+Press Save Button
+    [Documentation]    Press Save button
+    Wait Until Element Is Visible And Enabled    ${SAVE_AND_CLOSE_BUTTON}   timeout=20s
+    Click Element    ${SAVE_AND_CLOSE_BUTTON}    
+Add New Address With Fields
+    [Documentation]    Add new address with ID, Name and Fax fields
+    [Arguments]    ${id_value}    ${name_value}    ${fax_value}    ${phone_value}
+    Click Address Button
+    Go to Frame
+    Click Add Button
+
+    Fill Dynamic Field    Id    ${id_value}
+    Fill Dynamic Field    Name    ${name_value}
+    Fill Dynamic Field    Fax    ${fax_value}
+    Fill Dynamic Field    Phone Number    ${phone_value}
+
+    Press Save Button
 
 
 
